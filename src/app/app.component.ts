@@ -6,7 +6,8 @@
  * Description: App component
  * ========================================================
  */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,19 @@ import { Component } from '@angular/core';
     
   ]
 })
-export class AppComponent {
-  title = 'portfolio_angular';
+export class AppComponent implements OnInit {
+
+  constructor(private router: Router) {}
+  
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if(event instanceof NavigationEnd) {
+        if(this.router.url === '/') {
+          document.body.classList.add('home-bg');
+        } else {
+          document.body.classList.remove('home-bg');
+        }
+      }
+    })
+  }
 }

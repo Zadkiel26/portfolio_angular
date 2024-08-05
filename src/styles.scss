@@ -8,6 +8,20 @@ html, body {
     font-family: 'Poppins', Helvetica, sans-serif;
     height: 100%;
 }
+  
+body.home-bg {
+    background-image: url('assets/images/hero.png'); 
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 100%;
+    transition: background-image 0.5s ease-in-out;
+    color: white;
+
+    nav {
+      background-color: black;
+    }
+}
 
 .primary {
     background-color: rgb(35, 13, 231);
@@ -51,6 +65,7 @@ button {
 .active {
   text-decoration: underline;
 }
+
 
 @media only screen and (max-width: 768px) {
   .page-container {
