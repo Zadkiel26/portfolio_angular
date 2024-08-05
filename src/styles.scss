@@ -2,3 +2,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+    margin: 0;
+    font-family: 'Poppins', Helvetica, sans-serif;
+    height: 100%;
+}
+
+.primary {
+    background-color: rgb(35, 13, 231);
+}
+  
+.primary-text {
+    color: rgb(35, 13, 231);
+}
+  
+.secondary {
+    background-color: rgb(173, 173, 173);
+}
+  
+.secondary-text {
+    color: rgb(173, 173, 173);
+}
+
+.page-container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-container h1 {
+  padding-bottom: 2rem;
+  text-align: center;
+  font-weight: 300;
+}
+.page-container.flex-col {
+  flex-direction: column;
+}
+.page-container.flex-row {
+  flex-direction: row;
+}
+
+button {
+  background-color: rgb(35, 13, 231);
+  color: #fff;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-container {
+    min-height: auto;
+    align-items: flex-start;
+  }
+  .page-container .page-container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .page-container.flex-col {
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .page-container {
+    padding-top: 10%;
+    align-items: flex-start;
+  }
+  .page-container.flex-col {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .base-container {
+    max-width: 100%;
+    width: 85%;
+    margin: 0 auto;
+  }
+}
